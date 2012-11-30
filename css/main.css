@@ -1,0 +1,351 @@
+#logo{text-align:center;}
+@font-face {
+    font-family: arista;
+    src: url('http://www.keepnation.com/arista.otf');
+}
+body{
+	background:#FFFFFF;
+	color:#4D4D4D;
+	font-family: arista;
+	overflow: hidden;
+}
+h1{
+	color:#333333;
+	font-family: arista;
+}
+h3{
+	color:#404040;
+}
+#clickele{
+	text-align:center;
+	position:relative;
+	top:100px;
+	left:0;
+	width:100%;
+}
+.menuelement{
+	box-shadow: 10px 10px 10px #0044AA;
+	width:100px;
+	height:105px;
+	text-align:center;
+	border-color:#1166AA;
+	border-width:3px;
+	border-style: outset;
+	background:#FFFFFF;
+	font-weight:bold;
+	color:#1166AA;
+}
+.menuelement:hover{
+	box-shadow: 5px 5px 10px #1166AA;
+}
+.menuelement:active{
+	box-shadow: 0px 0px 10px #1166AA;
+}
+#contact{
+	position:absolute;
+	left:50px;
+	top:0px;
+	border-radius: 10px;
+}
+#contact:hover {
+	left:55px;
+	top:5px;
+}
+#contact:active {
+	left:60px;
+	top:10px;
+ }
+#product{
+	position:absolute;
+	left:225px;
+	top:0px;
+	border-radius: 10px;
+}
+#product:hover{
+	left:230px;
+	top:5px;
+}
+#product:active{
+	left:235px;
+	top:10px;
+}
+#team{
+	position:absolute;
+	left:400px;
+	top:0px;
+	border-radius: 10px;
+}
+#team:hover{
+	left:405px;
+	top:5px;
+}
+#team:active{
+	left:410px;
+	top:10px;
+}
+#board{
+	position:absolute;
+	left:575px;
+	top:0px;
+	border-radius: 10px;
+}
+#board:hover{
+	left:580px;
+	top:5px;
+}
+#board:active{
+	left:585px;
+	top:10px;
+}
+#bonus{
+	position:absolute;
+	left:750px;
+	top:0px;
+	border-radius: 10px;
+}
+#bonus:hover{
+	left:755px;
+	top:5px;
+}
+#bonus:active{
+	left:760px;
+	top:10px;
+}
+#menuelement{
+	text-align:center;
+	position:relative;
+}
+#menu{
+	left:50%;
+	width:900px;
+	margin-left: -450px;
+	center:0px;
+	position: absolute; 
+	bottom:120px;
+}
+.element{
+	position: fixed;
+	left:50%;	
+	margin-left:-300px;
+	top:50%;
+	margin-top:-200px;
+	width:600px;
+	height:400px;
+	background-color:rgba(255,255,255,0.95);
+	border-style: outset;
+	border-color:#999999;
+	border-width:5px;
+	border-radius:15px;
+	box-shadow: 10px 10px 5px #888888;
+	text-align:center;
+	z-index:1;
+}
+#clickbutton{
+	width:400px;
+	left:50%;
+	margin-left:-200px;
+	position: absolute;
+}
+.button {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 20px 40px;
+   -webkit-border-radius: 19px;
+   -moz-border-radius: 19px;
+   border-radius: 19px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 24px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   box-shadow: 0px 10px 5px #888888;
+   }
+.button:hover {
+   border-top-color: #478cba;
+   background: #478cba;
+   color: #ccc;
+   margin-top:5px;
+   box-shadow: 0px 5px 5px #888888;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   margin-top:10px;
+   box-shadow: 0px 0px 5px #888888;
+   }
+#eleproduct{
+	display:none;
+}
+#eleteam{
+	display:none;
+	margin-left:-400px;
+	margin-top:-200px;
+	width:800px;
+	height:400px;
+}
+#eleboard{
+	display:none;
+}
+#elebonus{
+	display:none;
+	margin-left:-250px;
+	margin-top:-192px;
+	width:500px;
+	height:385px;
+}
+.close{
+	width:42px;
+	height:42px;
+	position: absolute;
+	right:-20;
+	top:-20;
+}
+#prodlocked{
+	position:absolute;
+	left:225px;
+	top:0px;
+}
+#teamlocked{
+	position:absolute;
+	left:400px;
+	top:0px;
+}
+#boardlocked{
+	position:absolute;
+	left:575px;
+	top:0px;
+}
+#bonuslocked{
+	position:absolute;
+	left:750px;
+	top:0px;
+}
+.lock{
+	width:110px;
+	height:150px;
+	text-align:center;
+}
+.floatleft{
+	float: left;
+	width:90px;
+	height:90px;
+	margin-top:5px;
+	margin-left:5px;
+	margin-right:5px;
+}
+
+.teammember{
+	text-align:left;
+	width:370px;
+	height:100px;
+	background:#FFFFFF;
+	position:absolute;
+	border-radius:5px;
+	box-shadow: 2px 2px 2px #888888;
+}
+.titremember{
+	font-size:16px;
+}
+.descmember{
+	font-size:14px;
+}
+.boardmember{
+	text-align:left;
+	width:500px;
+	height:100px;
+	background:#FFFFFF;
+	position:absolute;
+	border-radius:5px;
+	box-shadow: 2px 2px 2px #888888;
+}
+.boardmember1{
+	top:70px;
+	left:10px;
+}
+.boardmember2{
+	top:180px;
+	left:90px;
+}
+.boardmember3{
+	top:290px;
+	left:10px;
+}
+.colonne2{	
+	left: 410px;
+}
+.colonne1{	
+	left: 20px;
+}
+.ligne1{
+	top:70px;
+}
+.ligne2{
+	top: 180px;
+}
+.ligne3{
+	top: 290px;
+}
+.colonne12{
+	left:175px;
+}
+.margintop{
+	margin-top:5px;
+	margin-left:5px;
+	margin-right:5px;
+	box-shadow: 2px 2px 2px #888888;
+	float: left;
+	width:75px;
+	height:75px;
+}
+.mailing{
+	background: #CCDDFF;
+	border-style: outset;
+	border-color:#999999;
+	border-width:1px;
+	border-radius:10px;
+	width: 350px;
+	left:125px;
+	position:relative;
+}
+.benefitstext{
+	text-align:left;
+}
+.benefitstitre{
+	text-align:left;
+	font-size:20px;
+	font-weight:bold;
+}
+#hiring{
+	position:fixed;
+	left:20px;
+	top:150px;
+	width:250px;
+	height:200px;
+	border-width:1px;
+	box-shadow: 2px 2px 2px #888888;
+	background:#CCDDFF;
+	text-align:center;
+	z-index:-1;
+}
+#pin{
+	width:35px;
+	height:35px;
+	position:absolute;
+	top:-10px;
+	left:120px; 
+}
+#txt6-1{
+	width:200px;
+	text-align:center;
+	position:relative;
+	left:25px;
+}
