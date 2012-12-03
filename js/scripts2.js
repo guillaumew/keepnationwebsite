@@ -7,12 +7,16 @@ var finalscorefr1;
 var finalscorefr2;
 var finalscoreen1;
 var finalscoreen2;
-var waittime;
-var move=false;
 
 $(function() {
     $(document).ready(function() {
     	beginning=new Date();
+    	
+    	var widget = new sessionm.widget({ 
+		  appID: "e366c3ab740d4bb16709b3ee8b5e6adb75dade4e", 
+		  style: "box" 
+		  });
+    	widget.embed('my_container');
     	
     	//Langues
     	
@@ -24,14 +28,13 @@ $(function() {
 			document.getElementById("titremenu5").innerHTML="Bonus";
 			document.getElementById("imgbutton").src="img/cliquezici.png";
 			document.getElementById("titre6").innerHTML="On recrute !";
-			document.getElementById("txt6-1").innerHTML="Nous avons besoin de <b>ninjas du code</b>. <br>Envoyez-nous votre candidature par <a href='mailto:contact@keepnation.com'>mail</a> <br> ou<br>";
+			document.getElementById("txt6-1").innerHTML="Envoyez-nous votre candidature par <a href='mailto:contact@keepnation.com'>mail</a> <br> ou<br>";
 			
 			
-			document.getElementById("titreele1").innerHTML="Découvrez-vous !";
+			document.getElementById("titreele1").innerHTML="Gardons le contact !";
 			document.getElementById("txt1-1").innerHTML="Soyez le premier à être tenu informé de notre lancement en nous donnant votre e-mail :";
 			document.getElementById("txt1-2").innerHTML="Vous pouvez aussi nous suivre sur vos réseaux sociaux préférés :";
 			document.getElementById("txt1-3").value="Rejoignez la beta";
-			document.getElementById("txt1-4").innerHTML="Keep Nation est un service qui permet d'ajouter une couche de gamification dans les applications afin de récompenser les utilisateurs fidèles.";
 			
 			document.getElementById("titreele2").innerHTML="Une solution pour vous :";
 			document.getElementById("titre2-1").innerHTML="Internautes / Mobinautes";
@@ -67,13 +70,12 @@ $(function() {
 			document.getElementById("titremenu5").innerHTML="Bonus";
 			document.getElementById("imgbutton").src="img/clickhere.png";
 			document.getElementById("titre6").innerHTML="We're hiring!";
-			document.getElementById("txt6-1").innerHTML="We need your <b>tech skills</b>. Shoot us a <a href='mailto:contact@keepnation.com'>mail</a> <br>or<br>";
+			document.getElementById("txt6-1").innerHTML="Shoot us a <a href='mailto:contact@keepnation.com'>mail</a> <br>or<br>";
 			
-			document.getElementById("titreele1").innerHTML="Meet Keep Nation!";
+			document.getElementById("titreele1").innerHTML="Keep it touch!";
 			document.getElementById("txt1-1").innerHTML="Be the first to know about our launch by giving your email address:";
 			document.getElementById("txt1-2").innerHTML="You can also follow us on your favorite social networks:";
 			document.getElementById("txt1-3").value="Join the beta";
-			document.getElementById("txt1-4").innerHTML="KeepNation is a service that uses gamification in order to reward with real presents the best users of an app.";
 			
 			document.getElementById("titreele2").innerHTML="A solution that fits you";
 			document.getElementById("titre2-1").innerHTML="Web surfers";
@@ -84,13 +86,13 @@ $(function() {
 			document.getElementById("txt2-3").innerHTML="Engage with the most active in an innovative way.";
 			
 			document.getElementById("titreele3").innerHTML="Our dream team :";
-			document.getElementById("txt3-11").innerHTML="<b>Xavier Mariani</b> <i>(aka Xav)</i><br>Président<br>";
+			document.getElementById("txt3-11").innerHTML="<b>Xavier Mariani</b> <i>(aka Canard)</i><br>Président<br>";
 			document.getElementById("txt3-12").innerHTML="Thinks of himself as a fashion addict, but wears unsuited socks.";
 			document.getElementById("txt3-21").innerHTML="<b>Emilien Eychenne</b><i>(aka Milou)</i><br>Directeur Général<br>";
 			document.getElementById("txt3-22").innerHTML="A self proclamed athlete who goes to McDonald's every other day.";
-			document.getElementById("txt3-31").innerHTML="<b>Guillaume Wolf</b> <i>(aka Geeyom)</i><br>Head of Product<br>";
+			document.getElementById("txt3-31").innerHTML="<b>Guillaume Wolf</b> <i>(ou Seppy)</i><br>Head of Product<br>";
 			document.getElementById("txt3-32").innerHTML="Says he's a geek but still hasn't watched the latest Star War epsiode. &nbsp;";
-			document.getElementById("txt3-41").innerHTML="<b>You</b> <i>(aka Tech Ninja)</i> - Technical position<br>";
+			document.getElementById("txt3-41").innerHTML="<b>You</b> <i>(ou CodeKiller)</i><br>Technical position<br>";
 			document.getElementById("txt3-42").innerHTML="We're hiring! Shoot us a <a href='mailto:contact@keepnation.com'>mail</a> to apply to our company.";
 			
 			document.getElementById("titreele4").innerHTML="Board of advisors:";
@@ -103,9 +105,10 @@ $(function() {
 		}
     	
      });	
-    
+       
     var button = document.getElementById("clickbutton");
 	button.addEventListener("click", addclick, false);
+	button.addEventListener("touchstart", addclick, false);
 	document.getElementById("contact").addEventListener("click", contactclick, false);
 	document.getElementById("product").addEventListener("click", prodclick, false);
 	document.getElementById("team").addEventListener("click", teamclick, false);
@@ -115,25 +118,32 @@ $(function() {
    
    
    function addclick(){
-   		updateclick();
-   		var button = document.getElementById("clickbutton");
+   		nbclick++;
+   		document.getElementById("gauge").style.width=Math.round(nbclick*175/intervalclick)+"px";
    		
    		if(nbclick==intervalclick){
+   			prodclick();
+   			document.getElementById("prodlocked").style.visibility="hidden";
+   		}
+   		else if(nbclick==2*intervalclick){
    			teamclick();
    			document.getElementById("teamlocked").style.visibility="hidden";
-   			button.style.width="150px";
-   			button.style.height="30px";
-   			document.getElementById("imgbutton").style.width="150px";
-   			movebutton(false);
-		}else if(nbclick>intervalclick && nbclick<2*intervalclick){
-			movebutton(false);
-		}
-   		else if(nbclick==2*intervalclick){
+   		}
+   		else if(nbclick==3*intervalclick){
    			boardclick();
    			document.getElementById("boardlocked").style.visibility="hidden";
-   			button.removeEventListener("click", addclick, false);
-   			waittime=1500;
-   			waitandclose();
+   		}
+   		else if(nbclick==4*intervalclick){
+   			end=new Date();
+   			bonusclick();
+   			var totaltime=end-beginning;
+   			document.getElementById("bonuslocked").style.visibility="hidden";
+   			document.getElementById("clickele").style.top="50px";
+   			if(userLang == 'fr'){ 
+   				document.getElementById("clickele").innerHTML = finalscorefr1 + Math.round(totaltime/100)/10 + finalscorefr2;
+   			}else{
+   				document.getElementById("clickele").innerHTML = finalscoreen1 + Math.round(totaltime/100)/10 + finalscoreen2;
+   			}
    		}
    }
    function newcontent(idcontent){
@@ -166,62 +176,3 @@ $(function() {
    function contactclick(){
    		newcontent("elecontact");
    }
-   function movebutton(how){
-   		var button = document.getElementById("clickbutton");
- 		var xpos = Math.round((Math.random()*(window.innerWidth-500))+500);
-		var ypos = Math.round((Math.random()*(window.innerHeight-400))-100);
-		if(how){
-			$("#clickbutton").animate({ left: xpos+"px", top:ypos+"px"}, 500 );
-		}
-		else{
-			button.style.left=xpos+"px";
-			button.style.top=ypos+"px";
-		}
-   }
-   function waitandclose(){
-   		var button = document.getElementById("clickbutton");
-   		movebutton(move);
-   		button.style.background= "-webkit-linear-gradient(top, #3e779d, #65a9d7)";
-   		button.style.background= "-moz-linear-gradient(top, #3e779d, #65a9d7)";
-   		button.style.background= "-ms-linear-gradient(top, #3e779d, #65a9d7)";
-   		button.style.background= "-o-linear-gradient(top, #3e779d, #65a9d7)";
-   		button.addEventListener("click", waitandclick, false);
-   		setTimeout(function() {
-   			waitandclose(waittime);
-   		},waittime);
-   }
-   function waitandclick(){
-   		var button = document.getElementById("clickbutton");
-   		button.removeEventListener("click", waitandclick, false);
-   		button.style.background="#33AA33";
-   		updateclick();
-   		if(nbclick==3*intervalclick){
-   			prodclick();
-   			document.getElementById("prodlocked").style.visibility="hidden";
-   			waittime=750;
-   			move=true;
-   		}
-   		else if(nbclick==4*intervalclick){
-   			end=new Date();
-   			bonusclick();
-   			var totaltime=end-beginning;
-   			document.getElementById("bonuslocked").style.visibility="hidden";
-   			document.getElementById("clickele").style.top="50px";
-   			if(userLang == 'fr'){ 
-   				document.getElementById("clickele").innerHTML = finalscorefr1 + Math.round(totaltime/100)/10 + finalscorefr2;
-   			}else{
-   				document.getElementById("clickele").innerHTML = finalscoreen1 + Math.round(totaltime/100)/10 + finalscoreen2;
-   			}
-   		}
-   }
-   function updateclick(){
-   		nbclick++;
-   		var newsize=Math.round(nbclick*175/intervalclick)+"px";
-   		$("#gauge").animate({ width: newsize}, 150 );
-   }
-  function showhelp(){
-  		$('#pleaseplay').show('slow');
-  		setTimeout(function() {
-   			$('#pleaseplay').hide('slow');
-   		},2500);
-  }
