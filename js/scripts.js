@@ -4,6 +4,7 @@ var nbrttclick=0;
 var clickeffect=false;
 var totalpoints=0;
 var bonusunlocked=false;
+var bonus3unlocked=false;
 var hasseencontact=false;
 var hasseenteam=false;
 var hasseenproduct=false;
@@ -18,6 +19,7 @@ var notifications=0;
 var sponsoffer = [] ;
 var sponsopointer=0;
 var sponsor2 = [];
+var imgachievements=["img/four.jpg","img/chrono.jpg","img/konami.jpg"];
 
 // KONAMI
 
@@ -123,16 +125,23 @@ $(document).ready(function() {
 		document.getElementById("titreele8-2").innerHTML="Objectifs";
 		document.getElementById("txt8-1-1").innerHTML="Un petit feu d'artifice à chaque clic";
 		document.getElementById("txt8-1-2").innerHTML="Une surprise !";
+		document.getElementById("txt8-1-3").innerHTML="Une photo de la team !";
 		document.getElementById("txt8-2-1").innerHTML="Consulter tous les onglets du menu";
 		document.getElementById("txt8-2-2").innerHTML="Lire la page produit pendant 30 secondes";
 		document.getElementById("txt8-2-3").innerHTML="Code Konami";
+		document.getElementById("txt8-3-1").innerHTML="Cliquer pour acheter";
+		document.getElementById("txt8-3-2").innerHTML="A réaliser";
+		document.getElementById("txt8-3-3").innerHTML="Cliquer pour collecter";
+		document.getElementById("txt8-3-4").innerHTML="Obtenu";
+		document.getElementById("txt8-4").innerHTML="Vous avez besoin de plus de points";
 		
 		finalscore1 = "<img src='img/win.jpg'> <br />Score final : ";
 		finalscore2 =  " secondes <br /> <input type='button' value='Rejouer ?' onClick='document.location.reload(true)'>";
 		
-		achievement1 = "Bravo, vous avez consulté tous les onglets du menu. Vous gagnez 40 pts !";
-		achievement2 = "Bravo, vous avez lu la page produit. Vous gagnez 20 pts ! ";
-		achievement3 = "Bravo, vous avez fait le code Konami. Vous gagnez 50 pts ! ";
+		textcollect = "Rendez-vous sur l'<a href='#' onclick='showaward();'>onglet des récompenses</a> pour collecter ces points et gagner des cadeaux.";
+		achievement1 = "Bravo, vous avez consulté tous les onglets du menu. Vous gagnez 40 pts !<br>"+textcollect;
+		achievement2 = "Bravo, vous avez lu la page produit. Vous gagnez 20 pts !<br>"+textcollect;
+		achievement3 = "Bravo, vous avez fait le code Konami. Vous gagnez 50 pts !<br>"+textcollect;
 		
 		sponsoffer[1] = "<iframe src='fb.html' scrolling='no' frameborder='0' style='border:none; overflow:hidden; width:250px; height:35px;' allowTransparency='true'></iframe>";
 		sponsor2 [1] = " pts ! Devenez fan de Keep Nation sur Facebook et nous vous offrons 100 pts.";
@@ -187,13 +196,20 @@ $(document).ready(function() {
 		document.getElementById("titreele8-2").innerHTML="Achievements";
 		document.getElementById("txt8-1-1").innerHTML="A small firework on each clic";
 		document.getElementById("txt8-1-2").innerHTML="A surprise!";
+		document.getElementById("txt8-1-3").innerHTML="A picture of our team";
 		document.getElementById("txt8-2-1").innerHTML="Read all tabs.";
 		document.getElementById("txt8-2-2").innerHTML="Read the product page during 30s.";
 		document.getElementById("txt8-2-3").innerHTML="Konami Code";
+		document.getElementById("txt8-3-1").innerHTML="Click and buy";
+		document.getElementById("txt8-3-2").innerHTML="To achieve";
+		document.getElementById("txt8-3-3").innerHTML="Click and collect";
+		document.getElementById("txt8-3-4").innerHTML="Done";
+		document.getElementById("txt8-4").innerHTML="You need more points";
 		
-		achievement1 = "Well done! You read all tabs. You earn 40 pts!";
-		achievement2 = "Well done! You've been on the product page for 30s. You earn 20 pts! ";
-		achievement3 = "Well done! You typed the Konami Code. You earn 50 pts! ";
+		textcollect = "Go on the <a href='#' onclick='showaward();'>awards tab</a> to collect these points and win prizes.";
+		achievement1 = "Well done! You read all tabs. You earn 40 pts!<br>"+textcollect;
+		achievement2 = "Well done! You've been on the product page for 30s. You earn 20 pts!<br>"+textcollect;
+		achievement3 = "Well done! You typed the Konami Code. You earn 50 pts!<br>"+textcollect;
 		
 		sponsor1 = "You just earned ";
 		sponsor2 [0] = " pts! If you sign up to our newsletter, we'll give you 100 pts.";
@@ -216,12 +232,16 @@ $(document).ready(function() {
 		document.getElementById("points").addEventListener("click", showaward, false);
 		document.getElementById("acquire1").addEventListener("click", buy1, false);
 		document.getElementById("acquire2").addEventListener("click", buy2, false);
+		document.getElementById("acquire3").addEventListener("click", buy3, false);
 	} else if (button.attachEvent) {
 		button.attachEvent("onclick", contactclick);
 		document.getElementById("product").attachEvent("onclick", prodclick);
 		document.getElementById("team").attachEvent("onclick", teamclick);
 		document.getElementById("board").attachEvent("onclick", boardclick);
-		document.getElementById("bonus").attachEvent("onclick", bonusclick);
+		document.getElementById("points").attachEvent("onclick", showaward);
+		document.getElementById("acquire1").attachEvent("onclick", buy1);
+		document.getElementById("acquire2").attachEvent("onclick", buy2);
+		document.getElementById("acquire2").attachEvent("onclick", buy2);
 	}
 	
 	$(document).click(function(e){
@@ -345,6 +365,7 @@ $(document).ready(function() {
      		document.getElementById("achievement").style.visibility = "hidden";
      		document.getElementById("achievement").style.right = "-500px";
      	}
+     	document.getElementById("achievimg").src=imgachievements[nb-1];
    		document.getElementById("achievement").style.visibility = "visible";
   		document.getElementById("txt7").innerHTML = message;
   		$("#achievement").animate({ right:"0px"}, 2000 );
@@ -353,16 +374,17 @@ $(document).ready(function() {
    			setTimeout(function() {
    				document.getElementById("achievement").style.visibility = "hidden";
    			},1000);
-   		},4000);
+   		},6000);
    		var thecollectimage = document.getElementById(image);
    		thecollectimage.src="img/collect.png";
-   		if (thecollectimage.addEventListener){
-   			thecollectimage.addEventListener(
+   		var button = document.getElementById("achiev"+nb);
+   		if (button.addEventListener){
+   			button.addEventListener(
    				"click",
    				function(event) { collect(points, thecollectimage,nb)},
    				false);
-   		}else if(thecollectimage.attachEvent){
-   			thecollectimage.attachEvent(
+   		}else if(button.attachEvent){
+   			button.attachEvent(
    				"onclick",
    				function(event) { collect(points, thecollectimage,nb)}
    				);
@@ -385,8 +407,6 @@ $(document).ready(function() {
   		}
   }
   function sponsor(points){
-  		//window.alert("pointer :"+sponsopointer+" / longuer tab :"+sponsoffer.length);
-  		//if(true){
   		if(sponsopointer<sponsoffer.length){
 	  		document.getElementById("txt9-1").innerHTML=sponsor1+points+sponsor2[sponsopointer];
   			document.getElementById("sponsoroffer").innerHTML=sponsoffer[sponsopointer];
@@ -405,23 +425,47 @@ $(document).ready(function() {
 	  			addpoints(-20);
 	  			document.getElementById("acquire1img").src="img/check.png";
 	  		}else{
-	  			window.alert("not enough points");
+				notenoughpoints();
 	  		}
 	  	}else{
-	  		window.alert("you already have it");
+	  		//to do toggle ?
+	  		//clickeffect=!clickeffect;
 	  	}
   }
-    function buy2(){
+  function buy2(){
   		if(!bonusunlocked){
-	  		if(totalpoints>=20){
+	  		if(totalpoints>=50){
 	  			bonusunlocked=true;
-	  			addpoints(-20);
+	  			addpoints(-50);
 	  			document.getElementById("acquire2img").src="img/check.png";
 	  			bonusclick();
 	  		}else{
-	  			window.alert("not enough points");
+				notenoughpoints();
 	  		}
 	  	}else{
 	  		bonusclick();
 	  	}
+  }
+  function buy3(){
+  		if(!bonus3unlocked){
+	  		if(totalpoints>=40){
+	  			bonus3unlocked=true;
+	  			addpoints(-40);
+	  			document.getElementById("acquire3img").src="img/check.png";
+	  			window.open('img/team1.jpg', '_blank');
+  				window.focus();
+	  		}else{
+				notenoughpoints();
+	  		}
+	  	}else{
+	  		window.open('img/team1.jpg', '_blank');
+  			window.focus();
+	  	}
+  }
+  function notenoughpoints(){
+  		$("#errormessage").show('fast');
+  		setTimeout(function() {
+   			$("#errormessage").hide('slow');
+   		},1000);
+ 		
   }

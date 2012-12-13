@@ -4,7 +4,6 @@
 		Keep Nation
 	</title>
 	
-	
 	<link rel="shortcut icon" href="favicon.ico" >
 	<link rel="icon" type="image/gif" href="animated_favicon1.gif" >
 	
@@ -12,11 +11,12 @@
 	
 	<script src="js/scripts.js" type="text/javascript"></script>
 	
+	<link href='css/main.css' rel='stylesheet' type='text/css' />
 	<!--[if IE]>
-	    <link type="text/css" rel="stylesheet" href="css/ie.css" />
+	<link href='css/ie.css' rel='stylesheet' type='text/css' />
 	<![endif]-->
 	<!--[if !IE]><!--> 
-		<link href='css/main.css' rel='stylesheet' type='text/css' />
+	<link href='css/nonIE.css' rel='stylesheet' type='text/css' />
 	 <!--<![endif]-->
 	
 	<script type="text/javascript">
@@ -188,50 +188,78 @@
 	<h1 id="titreele8"></h1>
 	<div id='awards'>
 		<h3 id="titreele8-1"></h3>
-		<div class='pointslist'>
-			<img src='img/coupe.png' class='floatleft2'>
+		<div class='pointslist' id="acquire1">
+			<img src='img/firework.png' class='floatleft2'>
 			<div id="acquire1" class='floatright'>
 				<img src='img/bourse.jpg' width=40 id="acquire1img">
 				<div class="awapoints">20pts</div>
 			</div>
 			<span class='titrememember' id='txt8-1-1'></span>
 		</div>
-		<div class='pointslist'>
+		<div class='pointslist' id="acquire2">
 			<img src='img/bonus.png' class='floatleft2'>
-			<div id="acquire2" class='floatright'>
+			<div class='floatright'>
 				<img src='img/bourse.jpg' width=40 id="acquire2img">
-				<div class="awapoints">20pts</div>
+				<div class="awapoints">50pts</div>
 			</div>
 			<span class='titrememember' id='txt8-1-2'></span>
+		</div>
+		<div class='pointslist' id="acquire3">
+			<img src='img/team/you1.jpg' class='floatleft2'>
+			<div class='floatright'>
+				<img src='img/bourse.jpg' width=40 id="acquire3img">
+				<div class="awapoints">40pts</div>
+			</div>
+			<span class='titrememember' id='txt8-1-3'></span>
 		</div>
 	</div>
 	<div id='achievements'>
 		<h3 id="titreele8-2"></h3>
-		<div class='pointslist'>
-			<img src='img/coupe.png' class='floatleft2'>
-			<div id="achiev1" class='floatright'>
+		<div class='pointslist' id="achiev1">
+			<img src='img/four.jpg' class='floatleft2'>
+			<div class='floatright'>
 				<img src='img/winpoints.jpg' width=40 id="achiev1img">
 				<div class="achpoints">40pts</div>
 			</div>
 			<span class='titrememember' id='txt8-2-1'></span>
 		</div>
-		<div class='pointslist'>
-			<img src='img/coupe.png' class='floatleft2'>
-			<div id="achiev2" class='floatright'>
+		<div class='pointslist' id="achiev2">
+			<img src='img/chrono.jpg' class='floatleft2'>
+			<div class='floatright'>
 				<img src='img/winpoints.jpg' width=40 id="achiev2img">
 				<div class="achpoints">20pts</div>
 			</div>
 			<span class='titrememember' id='txt8-2-2'></span>
 		</div>
-		<div class='pointslist'>
+		<div class='pointslist' id="achiev3">
 			<img src='img/konami.jpg' class='floatleft2'>
-			<div id="achiev3" class='floatright'>
+			<div class='floatright'>
 				<img src='img/winpoints.jpg' width=40 id="achiev3img">
 				<div class="achpoints">50pts</div>
 			</div>
 			<span class='titrememember' id='txt8-2-3'></span>
 		</div>
 	</div>
+	<div id="awardcaption">
+		<div class="elementcaption">
+			<img src='img/bourse.jpg' width=40><br>
+			<span id="txt8-3-1"></span>
+		</div>
+		<div class="elementcaption">
+		<img src='img/winpoints.jpg' width=40><br>
+			<span id="txt8-3-2"></span>
+		</div>
+		<div class="elementcaption">
+		<img src='img/collect.png' width=40><br>
+			<span id="txt8-3-3"></span>
+		</div>
+		<div class="elementcaption">
+		<img src='img/check.png' width=40><br>
+			<span id="txt8-3-4"></span>
+		</div>
+				
+	</div>
+	<div id="errormessage"><span id="txt8-4"></span></div>
 	<img src='img/closeX.png' class='close' onclick='closeall();'>
 </div>
 <div id='hiring' class="coloredbackground">
@@ -248,9 +276,9 @@
 	</script>
 </div>
 <div id="achievement" class="coloredbackground boardmember bottomright">
-	<img src="img/coupe.png" class="floatleft">
-	<b>Achievement unlocked</b>
-	<p class='titrememember' id='txt7'></p>
+	<img src="img/coupe.png" class="floatleft" id="achievimg">
+	<b>Achievement unlocked</b><br>
+	<span class='titrememember' id='txt7'></span>
 </div>
 <div id="dummy"></div>
 <div id="points" class="menuelement">

@@ -1,102 +1,100 @@
-body{
-	text-align:center;
-}
+
 #contact{
-	position:absolute;
-	left:50px;
-	top:0px;
-	border-radius: 10px;
+	left:20%;
+	margin-left:-50px;
+	bottom:10px;
 }
 #contact:hover {
-	left:55px;
-	top:5px;
+	bottom:5px;
 }
 #contact:active {
-	left:60px;
-	top:10px;
+	bottom:0px;
  }
 #team{
-	position:absolute;
-	left:225px;
-	top:0px;
-	border-radius: 10px;
+	left:40%;
+	margin-left:-50px;
+	bottom:10px;
 }
 #team:hover{
-	left:230px;
-	top:5px;
+	bottom:5px;
 }
 #team:active{
-	left:235px;
-	top:10px;
-}
-#board{
-	position:absolute;
-	left:400px;
-	top:0px;
-	border-radius: 10px;
-}
-#board:hover{
-	left:405px;
-	top:5px;
-}
-#board:active{
-	left:410px;
-	top:10px;
-}
-#product{
-	position:relative;
-	left:575px;
-	top:0px;
-	border-radius: 10px;
-}
-#product:hover{
-	left:580px;
-	top:5px;
-}
-#product:active{
-	left:585px;
-	top:10px;
-}
-#menuelement{
-	position:absolute;
-	margin-left:-450px;
 	bottom:0px;
 }
+#board{
+	left:60%;
+	margin-left:-50px;
+	bottom:10px;
+}
+#board:hover{
+	bottom:5px;
+}
+#board:active{
+	bottom:0px;
+}
+#product{
+	left:80%;
+	margin-left:-50px;
+	bottom:10px;
+}
+#product:hover{
+	bottom:5px;
+}
+#product:active{
+	bottom:0px;
+}
+#menuelement{
+	text-align:center;
+	position:fixed;
+	bottom:120px;
+}
 .element{
-	position:absolute;
-	left:50px;	
-	top:150px;
+	position: fixed;
+	left:50%;	
+	margin-left:-300px;
+	top:50%;
+	margin-top:-200px;
 	width:600px;
 	height:400px;
-	background-color:rgb(255,255,255);
-	border-style: outset;
+	background-color:rgba(255,255,255,0.95);
+	border-style: solid;
 	border-width:5px;
 	border-radius:15px;
-	box-shadow: 10px 10px 10px #0044AA;
-	border-color:#1166AA;
+	box-shadow: 10px 10px 10px #1F6BFF;
+	border-color:#092B7D;
 	text-align:center;
 	z-index:1;
 }
+
 #eleteam{
 	display:none;
+	margin-left:-400px;
+	margin-top:-200px;
 	width:800px;
 	height:400px;
 }
+
 #sponsor{
 	display:none;
+	margin-left:-150px;
+	margin-top:-225px;
 	width:300px;
 	height:450px;
 	text-align:center;
 }
+
 #elebonus{
 	display:none;
+	margin-left:-250px;
+	margin-top:-192px;
 	width:500px;
 	height:385px;
 }
 
+
 #txt1-4{
-	left:0px;
-	width: 300px;
+	width:350px;
+	left:50px;
 	position:relative;
 }
 .mailing{
@@ -105,42 +103,40 @@ body{
 	border-width:1px;
 	border-radius:10px;
 	width: 450px;
-	left:0px;
+	left:75px;
 	position:relative;
 	font-size:20px;
 	text-align:center;
 }
 #hiring{
-	position:absolute;
+	position:fixed;
 	left:20px;
 	top:150px;
 	width:250px;
-	height:200px;
+	height:250px;
 	border-width:1px;
 	box-shadow: 2px 2px 2px #888888;
-	background:#CCDDFF;
 	text-align:center;
 	z-index:-1;
 }
-
 #txt6-1{
 	width:200px;
 	text-align:center;
 	position:relative;
+	left:25px;
 }
 
 .coloredbackground{
 	background:#AAC1FF;
 }
-a img {
-  border: 0;
-}
 #points{
-	position:absolute;
+	position:fixed;
 	top:10px;
 	right:10px;
 	text-align:center;
 }
 #awardcaption{
-	display:none;
+	position:absolute;
+	bottom:0px;
+	width:100%;
 }
