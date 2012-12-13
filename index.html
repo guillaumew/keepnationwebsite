@@ -1,8 +1,9 @@
-<html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 	<title>
 		Keep Nation
 	</title>
+	
 	
 	<link rel="shortcut icon" href="favicon.ico" >
 	<link rel="icon" type="image/gif" href="animated_favicon1.gif" >
@@ -10,7 +11,6 @@
 	<script src="js/jquery-latest.js"></script>
 	
 	<script src="js/scripts.js" type="text/javascript"></script>
-	<script src="js/index.js" type="text/javascript"></script>
 	
 	<!--[if IE]>
 	    <link type="text/css" rel="stylesheet" href="css/ie.css" />
@@ -44,47 +44,29 @@
 	<div id='logo'>
 		<img alt="logo" src="img/logo1.png"><br>
 	</div>
-	
-	<div id='clickele'>
-		<div id="clickbutton" class="button"><img src='img/cliquezici.png' id='imgbutton'></div>
+	<div id="content">
+		<img src="img/arrow.png"><br>
 	</div>
-	
-	<div id='menu'>
-		<div id="divgauge">
-			<div id="gauge"></div>
-			<div id="indicator1" class="indcator">0<br>|</div>
-			<div id="indicator2" class="indcator">10<br>|</div>
-			<div id="indicator3" class="indcator">20<br>|</div>
-			<div id="indicator4" class="indcator">30<br>|</div>
-			<div id="indicator5" class="indcator">40<br>|</div>
+	<div id='menuelement'>
+		<div id='contact' class='menuelement'>
+			<img src='img/doigts.jpg' width='80' height='80'> <br />
+			<span id='titremenu1'></span>
 		</div>
-		<div id='menuelement'>
-			<div id='contact' class='menuelement'>
-				<img src='img/doigts.jpg' width='80' height='80'> <br />
-				<span id='titremenu1'></span>
-			</div>
-			<div id='product' class='menuelement'>
-				<img src='img/product.png' width='80' height='80'> <br />
-				<span id='titremenu2'></span>
-			</div>
-			<div id='team' class='menuelement'>
-				<img src='img/team.jpg' width='80' height='80'> <br />
-				<span id='titremenu3'></span>
-			</div>
-			<div id='board' class='menuelement'>
-				<img src='img/board.png' width='80' height='80'> <br />
-				<span id='titremenu4'></span>
-			</div>
-			<div id='bonus' class='menuelement'>
-				<img src='img/bonus.png' width='80' height='80'> <br />
-				<span id='titremenu5'></span>
-			</div>
-			<div id='prodlocked' class='lock'><img src='img/lock.png' width='100px' height='105px' onmouseover="showhelp()"></div>
-			<div id='teamlocked' class='lock'><img src='img/lock.png' width='100px' height='105px' onmouseover="showhelp()"></div>
-			<div id='boardlocked' class='lock'><img src='img/lock.png' width='100px' height='105px' onmouseover="showhelp()"></div>
-			<div id='bonuslocked' class='lock'><img src='img/lock.png' width='100px' height='105px' onmouseover="showhelp()"></div>
+		<div id='product' class='menuelement'>
+			<img src='img/product.png' width='80' height='80'> <br />
+			<span id='titremenu2'></span>
 		</div>
+		<div id='team' class='menuelement'>
+			<img src='img/team.jpg' width='80' height='80'> <br />
+			<span id='titremenu3'></span>
+		</div>
+		<div id='board' class='menuelement'>
+			<img src='img/board.png' width='80' height='80'> <br />
+			<span id='titremenu4'></span>
+		</div>
+
 	</div>
+
 <div id='elecontact' class='element'>
 	<h1 id="titreele1"></h1>
 	<div class='mailing coloredbackground'>
@@ -103,7 +85,7 @@
 	<a href='http://www.facebook.com/pages/Keep-Nation/308112185964768?fref=ts' target='new'><img src='img/social/facebook.png' width="40"></a>
 	<a href='https://twitter.com/KeepNation' target='new'><img src='img/social/twitter.png' width="40"></a>
 	<a href='http://www.linkedin.com/company/keep-nation' target='new'><img src='img/social/linkedin.png' width="40"></a>
-	<img src='img/closeX.png' class='close' onclick="closeall();">
+	<img src='img/closeX.png' class='close close1ie' onclick="closeall();">
 </div>
 <div id='eleproduct' class='element'>
 	<h1 id="titreele2"></h1>
@@ -202,6 +184,56 @@
 </div>
 <div id='elebonus' class='element'>
 </div>
+<div id='elepoints' class='element'>
+	<h1 id="titreele8"></h1>
+	<div id='awards'>
+		<h3 id="titreele8-1"></h3>
+		<div class='pointslist'>
+			<img src='img/coupe.png' class='floatleft2'>
+			<div id="acquire1" class='floatright'>
+				<img src='img/bourse.jpg' width=40 id="acquire1img">
+				<div class="awapoints">20pts</div>
+			</div>
+			<span class='titrememember' id='txt8-1-1'></span>
+		</div>
+		<div class='pointslist'>
+			<img src='img/bonus.png' class='floatleft2'>
+			<div id="acquire2" class='floatright'>
+				<img src='img/bourse.jpg' width=40 id="acquire2img">
+				<div class="awapoints">20pts</div>
+			</div>
+			<span class='titrememember' id='txt8-1-2'></span>
+		</div>
+	</div>
+	<div id='achievements'>
+		<h3 id="titreele8-2"></h3>
+		<div class='pointslist'>
+			<img src='img/coupe.png' class='floatleft2'>
+			<div id="achiev1" class='floatright'>
+				<img src='img/winpoints.jpg' width=40 id="achiev1img">
+				<div class="achpoints">40pts</div>
+			</div>
+			<span class='titrememember' id='txt8-2-1'></span>
+		</div>
+		<div class='pointslist'>
+			<img src='img/coupe.png' class='floatleft2'>
+			<div id="achiev2" class='floatright'>
+				<img src='img/winpoints.jpg' width=40 id="achiev2img">
+				<div class="achpoints">20pts</div>
+			</div>
+			<span class='titrememember' id='txt8-2-2'></span>
+		</div>
+		<div class='pointslist'>
+			<img src='img/konami.jpg' class='floatleft2'>
+			<div id="achiev3" class='floatright'>
+				<img src='img/winpoints.jpg' width=40 id="achiev3img">
+				<div class="achpoints">50pts</div>
+			</div>
+			<span class='titrememember' id='txt8-2-3'></span>
+		</div>
+	</div>
+	<img src='img/closeX.png' class='close' onclick='closeall();'>
+</div>
 <div id='hiring' class="coloredbackground">
 	<img src='img/pin.png' id='pin'>
 	<h1 id='titre6'></h1>
@@ -215,13 +247,23 @@
 	>
 	</script>
 </div>
-<div id="pleaseplay">
-	<p id=txt0>	</p>
-</div>
 <div id="achievement" class="coloredbackground boardmember bottomright">
 	<img src="img/coupe.png" class="floatleft">
 	<b>Achievement unlocked</b>
 	<p class='titrememember' id='txt7'></p>
+</div>
+<div id="dummy"></div>
+<div id="points" class="menuelement">
+	<img src="img/coupe.png" width="80" height="80"><br>
+	<span id="score">0 pts</span>
+	<div id="notification">0</div>
+</div>
+<div id="sponsor" class='element'>
+	<h1 id="title9">Congrats</h1>
+	<p class="width250" id="txt9-1"></p>
+	<div class="coloredbackground width250" id="sponsoroffer"></div>
+	<img src='img/winpoints.jpg' width=80><p id="sponsorpoints">100pts</p>
+	<img src='img/closeX.png' class='close' onclick='closesponsor();'>
 </div>
 </body>
 </html>
